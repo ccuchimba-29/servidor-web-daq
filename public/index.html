@@ -1,83 +1,43 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DAQ Multicanal</title>
-    <link rel="icon" href="../src/imagenes/favicon-16x16.png" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="../src/css/est_encabezado.css">
-    <link rel="stylesheet" type="text/css" href="../src/css/est_pie_pagina.css">
-    <link rel="stylesheet" type="text/css" href="../src/css/est_cuerpo_index.css">
+    <title>DAQ System</title>
 
+    <link rel="stylesheet" href="../src/css/style.css">
 </head>
-<body>
-    <!--ENCABEZADO-->
-    <main>
-    <div class="contenedor1">
-        <!---ENCABEZADO: LOGO EMPRESA CONTACTO LOGIN-->
-        <div class="encabezado" >        
-            <img id= "logoempresa" src="../src/imagenes/logo.png" alt="logo de la empresa" >
-            <a href="pages/us/contacto.html" id="contacto">Contáctenos</a>
-           <!--- <a href="pages/login.html">
-                <img id= "login" src="../src/imagenes/LogIn.png" alt="Icono de LogIn">
-            </a>-->
-            <!---ENCABEZADO: NAVEGACIÓN POR LAS PAGINAS-->
-        </div>
-        <div class="contenedorNavegador">
-            <div class="navegador">
-                <a id="producto" href="#">Producto</a>
-                <a id="soluciones" href="pages/Solutions/soluciones.html">Soluciones</a>
-                <a id="soporte" href="pages/support/soporte.html">Soporte</a>
-                <a id="nosotros" href="pages/us/nosotros.html">Nosotros</a>
-            </div>
-        </div>
-    </div>
-    <!---CUERPO DE LA PAGINA-->
-    <div class="cuerpoPagina">
-        <!--Parte 1 contenido-->
-           <div class="contenido_1">
-                <div>
-                    <h2>¿Qué es DAQ?</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore velit voluptate quae 
-                    repellat, at non porro ad, reiciendis eveniet recusandae maxime illo 
-                    facere iure provident eligendi suscipit repudiandae ipsum. Corrupti?
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda ea aliquam, possimus dignissimos quaerat rerum quisquam, 
-                    vel ut harum nisi magni iusto sit blanditiis corrupti molestias illum et! Rem, numquam!
-                    <a id="boton" href="../public/pages/DAQ.html">Ingrese al software</a>
-                    </p>
-                    <img src="../src/imagenes/DAQ_img1.png" alt="Imagen del DAQ 1 ">
-                </div>
-            </div>
-            <!--Parte 2 contenido-->
-            <div class="contenido_2">
-                
-                <div >
-                    <h2 >¿Qué puedes hacer con un DAQ?</h2>
-                    <div class="tabla1">
-                    <h3 class="c1r1">Gráficas</h3>
-                    <img src="../src/imagenes/grafica_fondoAzul.png" alt="" class="c1r2">
-                    <h3 class="c1r3">Cálculo en la nube</h3>
-                    <img src="../src/imagenes/nube_fondoAzul.png" alt="" class="c1r4">
-                
-                    <h3 class="c2r1">Análisis de datos</h3>
-                    <img src="../src/imagenes/analisisDatos_FondoAzul.png" alt="" class="c2r2">
-                    <h3 class="c2r3">Conexión con hardware</h3>
-                    <img src="../src/imagenes/hardware_fondoAzul.png" alt="" class="c2r4">
-                </div>
-                </div>
-            </div>
-    </div>
 
-    <!---PIE DE PAGINA-->
-    <div class="piePagina">
-        <div class="contenidoPie">
-        <h4>Cristian Andres Cuchimba Quina</h4>
-        <a href="https://facebook.com" target="_blank" class="facebook">Facebook</a>
-        <a href="https://web.whatsapp.com" target="_blank" class="whastapp">WhastApp</a>
-        <a href="https://instagram.com" target="_blank" class="instagram">Instagram</a>
-        <a href="https://linkedin.com" target="_blank" class="linkedin">LinkedIn</a>
-        </div>
-    </div>
-</main>
+<body>
+
+    <main class="contenedor">
+
+        <section class="bienvenida">
+
+            <h1>Bienvenido al sistema DAQ</h1>
+
+            <p>
+                Plataforma de adquisición y visualización de datos 
+                diseñada para monitoreo, análisis y control de variables 
+                en tiempo real.
+            </p>
+
+            <button onclick="irSoftware()">
+                Ingresar al software
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <script>
+        function irSoftware() {
+            window.location.href = "pages/daq.html";
+        }
+    </script>
+
 </body>
+
 </html>

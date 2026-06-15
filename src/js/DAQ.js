@@ -108,7 +108,7 @@ function descargarTXT(){
 function confirmacionDeSalir(){
    
         if(confirm("¿Seguro que desea salir?")){
-            window.location.href = "../../public/index.html"
+            window.location.href = "../../public/index_2.html"
             //window.open("../../public/index.html", "Thanks for Visiting!");
         }
 }
