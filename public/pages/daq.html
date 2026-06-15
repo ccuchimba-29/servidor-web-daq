@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAQ_Software</title>
+    <link rel="icon" href="../../src/imagenes/favicon-16x16.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../src/css/DAQ.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <main>
+        <!--Contenedor titulo-->
+        <div class="contenedor_titulo">
+            <a id="btn_volver_pagina_web">
+                <img id = "img_volver" src="../../src/imagenes/btn_regresar.png" alt="">
+            </a>
+            <h1>SISTEMA DE ADQUISICIÓN DE DATOS</h1>
+        </div>
+        
+        <!--Contenedor de las herramientas-->
+        <div class="contenedor_cabecera">
+            <div class="contenedor_dispositivo">
+                    <h3>Dispositivo</h3>
+                        <button id="btn_iniciar" class="btn">Iniciar</button>
+                        <button id="btn_detener" class="btn">Detener</button>
+                        <button id="btn_reiniciar" class="btn">Reiniciar</button>
+                        <button id="btn_db" class="btn">Ir a DB</button>
+                        <!--
+                        <select  >
+                            <option value="modo_simulacion">Modo Simulación</option>
+                        </select>
+                        -->
+
+            </div>
+            <div class="contenedor_guardar">
+                <h3>Guardar</h3>
+                <button id="btn_TXT" class="btn">Guardar TXT</button>
+                <button id="btn_CSV" class="btn">Guardar CSV</button>
+            </div>
+        </div>
+
+        <!--Contenedor de infromación en tiempo real-->
+        <div class="contenedor_datos_tiempo_real">
+            <div class="contenedor_datos">
+                <h4>Estado: <strong id="estado">Detenido</strong></h4>
+                <h4>Fecha: <strong id="fecha"></strong></h4>
+                <h4>Hora: <strong id="hora"></strong></h4>
+                <h4>Tiempo: <strong id="tiempo"></strong></h4>
+                <h4>Sensor 1: <strong id="sensor_1"></strong></h4>
+                <h4>Sensor 2: <strong id="sensor_2"></strong></h4>
+                <h4>Sensor 3: <strong id="sensor_3"></strong></h4>
+                
+            </div>
+        </div>
+
+        <!--COntenedor principal de las graficas-->
+        <div class="contenedor_graficas">
+                    <!--Contenedor Grafica principal-->
+          <div class="contenedor_grafica_principal">
+            <div ID="contenedorTituloGrafica"> 
+                <h2 id = "nombreGrafica" >Gráfica - título</h2>
+            </div>
+              <canvas id="myChart" width="900px" height="400px">
+
+              </canvas>
+          </div>
+
+            <!--Grafica secundaria-->
+          <div class="contenedor_grafica_secundaria">
+              <h2 id = "nombreGraficaAuxiliar">Gráfica auxiliar - título</h2>
+              <canvas id="grafica_secundaria" width="300px" height="400px">
+
+              </canvas>
+          </div>
+        </div>
+        <div class="pie_pagina">
+            <h4>Cristian Andres Cuchimba Quina</h4>
+        </div>
+
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../../src/js/DAQ.js" type="module"></script>
+
+</body>
+</html>

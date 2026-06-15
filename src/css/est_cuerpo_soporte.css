@@ -1,0 +1,103 @@
+/*--Encabezado--*/
+a#producto, a#soluciones{
+    border-bottom: none;
+}
+a#soporte{
+    border-bottom: solid white;
+}
+
+/*-----Cuerpo de la pagina---*/
+div.cuerpoPagina{
+    width: 99.5%;
+    margin-top: 180px;
+    font-size: 1em;
+}
+
+/*-------Parte 1 del contenido---*/
+div.contenido_1, div.contenido_2 {
+    /*border: solid;*/
+    margin-top: 0px;
+    width: 100%;
+    display:flex;
+    justify-content: center;
+}
+div.contenido_1{
+    width: 101%;
+    background-image: url("../resorces/images/electronica-background-3.png");
+    font-size: 1.5em;
+}
+div.contenido_1 div{
+    width: 1000px;
+   /* border: solid;*/
+}
+div.contenido_1 *{
+   /* border: solid;*/
+    width: 60%;
+    float: left;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    text-align: justify;
+    color: white;
+}
+
+
+/*-------Parte 2 del contenido---*/
+div.contenido_2{
+    margin-top: 10px;
+}
+div.contenido_2 div{
+  /*  border: solid;*/
+    width: 1000px;
+}
+div.contenido_2 h2{
+    text-align: left;
+}
+div.contenido_2 img{
+    width: 250px;
+    height: 150px;
+}
+
+div.tabla1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(50px, auto);
+    justify-items: center;
+  }
+  div.tabla1 h3, div.tabla1 a{
+    display: inline;
+    width: 250px;
+    text-align: center;
+    border-bottom:solid #033152;
+
+  }
+  div.tabla1 a{
+    text-align:justify;
+    text-decoration: none;
+    color: black;
+  }
+  /*----Columna--*/
+.c1r1{
+    grid-column: 1 2 ;
+    grid-row: 1;
+  }
+.c1r2{
+    grid-column: 1 ;
+    grid-row: 2;
+  }
+.c1r3{
+    grid-column: 1 ;
+    grid-row: 3;
+  }
+.c2r1{
+    grid-column: 2 ;
+    grid-row: 1;
+  }
+.c2r2{
+    grid-column: 2 ;
+    grid-row: 2;
+  }
+.c2r3{
+    grid-column: 2 ;
+    grid-row: 3;
+  }

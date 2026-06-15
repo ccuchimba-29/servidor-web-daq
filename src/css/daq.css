@@ -1,0 +1,149 @@
+/*Hoja de estilos del software*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    color: black;
+
+}
+
+body{
+    background-color: #fff;
+}
+
+main{
+    padding: 0px;
+    margin:0 auto;
+    max-width: 1250px;
+    max-height: 750px;
+    
+}
+/*main div{
+    border: solid black;
+}*/
+/*Estilos del contenedor de la cabecera*/
+.contenedor_titulo{
+    display: flex;
+    justify-content: space-between; /* Esto alinea los elementos hijo a los extremos del contenedor */
+    align-items: center; /* Esto centra verticalmente los elementos hijo dentro del contenedor */
+}
+h1{
+    text-align: center;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    font-size: 25px;
+    margin: 0 auto;
+}
+#img_volver{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 0px;
+}
+
+.contenedor_cabecera{
+    height: 50px;
+    border-radius: 5px;
+    background-color: #a1cbfa;
+    border: 1px solid black;
+}
+
+.contenedor_cabecera div{
+    display: inline-block;
+    height: 100%;
+    padding: 0px 40px 0 40px;
+    border: 1px solid;
+    border-radius: 5px;
+    background-color: #91b6e0;
+}
+
+.contenedor_dispositivo{
+    float: left;
+}
+
+.contenedor_guardar{
+    float: right;
+}
+
+h3{
+    margin-top: 2px;
+    text-align: center;
+    font-size: 15px;
+}
+ a{
+    display: inline-block;
+    margin-top: 4px;
+    margin-left: 10px;
+    font-size: 10px;
+}
+
+h4{
+    color: rgb(107, 107, 107);
+    text-decoration: none;
+}
+
+/*Estilos del contendor de los datos en tiempo real*/
+
+.contenedor_datos_tiempo_real{
+    height: 40px;
+    margin-left: 0px;
+    padding-top: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.contenedor_datos_tiempo_real *{
+    display: inline-block;
+    margin-right: 20px;
+}
+
+/*Estilos de las gráficas */
+.contenedor_grafica_principal{
+    float: left;
+    width: 75%;
+    background-color: #fff;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+    height: 450px;
+    max-height: 450px;
+}
+.contenedor_grafica_secundaria{
+    float: left;
+    width: 25%;
+    background-color: #fff;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+    height: 450px;
+    max-height: 450px;
+}
+
+.contenedor_grafica_principal h2, .contenedor_grafica_secundaria h2{
+    border: 1px solid black;
+    background-color: #91b6e0;
+    border-radius: 5px;
+    margin-top: 0px;
+    font-size: 15px;
+} 
+
+
+.pie_pagina{
+    border: 1px solid black;
+    background-color: #91b6e0;
+    border-radius: 5px;
+    clear: both;
+    
+}
+button{
+    background-color: white;
+    border-radius: 5px;
+    padding: 2px;
+    border: solid 1px;
+    cursor: pointer;
+}
+button:hover{
+    background-color: #a1cbfa;
+    border: solid 2px white;
+}

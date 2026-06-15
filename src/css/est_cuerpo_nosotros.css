@@ -1,0 +1,59 @@
+/*--Encabezado--*/
+a#producto, a#soluciones,a#soporte{
+    border-bottom: none;
+}
+a#nosotros{
+    border-bottom: solid white;
+}
+
+/*-----Cuerpo de la pagina---*/
+div.cuerpoPagina{
+    margin: 0 auto;
+    width: 99.5%;
+    margin-top: 180px;
+    font-size: 1em;
+}
+
+/*-------Parte 1 del contenido---*/
+div.contenido_2 {
+    /*border: solid;*/
+    margin-top: 0px;
+    width: 100%;
+    display:flex;
+    justify-content: center;
+}
+/*-------Parte 2 del contenido---*/
+div.contenido_2{
+    margin-top: 10px;
+    font-size: 1.5em;
+    text-align: justify;
+}
+div.contenido_2 div{
+  /*  border: solid;*/
+    width: 1000px;
+}
+div.contenido_2 h2{
+    text-align: left;
+}
+form#formulario1{
+  width: 300px;
+  margin-left: 30%;
+  border: dashed;
+}
+form#formulario1 *{
+  margin-bottom: 20px;
+  display: block;
+  margin-left: 10px;
+}
+label.titulo1{
+  text-align: center;
+}
+label.titulo2{
+  text-align: center;
+  margin-top: 50px;
+}
+label.correo{
+  margin-top: 1px;
+  font-size: 0.7em;
+}
+
