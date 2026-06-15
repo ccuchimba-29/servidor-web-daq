@@ -26,18 +26,36 @@
                         <button id="btn_iniciar" class="btn">Iniciar</button>
                         <button id="btn_detener" class="btn">Detener</button>
                         <button id="btn_reiniciar" class="btn">Reiniciar</button>
-                        <button id="btn_db" class="btn">Ir a DB</button>
-                        <!--
-                        <select  >
-                            <option value="modo_simulacion">Modo Simulación</option>
-                        </select>
-                        -->
+                        
 
             </div>
             <div class="contenedor_guardar">
                 <h3>Guardar</h3>
                 <button id="btn_TXT" class="btn">Guardar TXT</button>
                 <button id="btn_CSV" class="btn">Guardar CSV</button>
+            </div>
+
+            <div class="contenedor_historial">
+                <h3>Historial</h3>
+                <button id="btn_historial" class="btn">Historial</button>
+            </div>
+            
+        </div>
+        
+
+        <div id="panel_historial" class="panel_historial oculto">
+            <h2>Historial de capturas</h2>
+            <div class="captura">
+                <h4>Prueba 01</h4>
+                <p>Fecha: 14/06/2026</p>
+                <p>Sensores: 12</p>
+                <p>Muestras: 5000</p>
+                <button class="btn">
+                    Abrir
+                </button>
+                <button class="btn">
+                    Descargar
+                </button>
             </div>
         </div>
 
@@ -90,7 +108,7 @@
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="../../src/js/DAQ.js" type="module"></script>
+    <script src="../../src/js/daq.js" type="module"></script>
 
 </body>
 </html>

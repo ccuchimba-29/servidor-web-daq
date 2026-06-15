@@ -73,24 +73,21 @@ main {
 
 
 .contenedor_cabecera {
+    width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     margin-top: 20px;
 }
 
-
-
-
 .contenedor_dispositivo,
-.contenedor_guardar {
+.contenedor_guardar,
+.contenedor_historial {
     background: white;
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
-
-
 
 
 .contenedor_cabecera h3 {
@@ -99,6 +96,61 @@ main {
 }
 
 
+.contenedor_historial {
+
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+
+
+}
+
+.panel_historial {
+
+
+    margin-top:20px;
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+
+
+}
+
+
+
+.captura {
+
+
+    background:#f8fafc;
+
+    padding:15px;
+
+    margin-top:15px;
+
+    border-radius:10px;
+
+
+}
+
+
+
+.oculto {
+
+
+    display:none;
+
+
+}
 
 
 
@@ -251,9 +303,6 @@ canvas {
 }
 
 
-
-
-
 /* ===========================
        RESPONSIVE
 =========================== */
@@ -261,14 +310,9 @@ canvas {
 
 @media(max-width:900px){
     .contenedor_cabecera {
-        grid-template-columns:1fr;
-    }
-    .contenedor_datos {
-        grid-template-columns:repeat(2,1fr);
+        grid-template-columns: 1fr;
     }
 }
-
-
 
 @media(max-width:500px){
     main{
