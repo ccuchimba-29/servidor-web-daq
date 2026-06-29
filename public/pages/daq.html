@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DAQ_Software</title>
+    <title>DAQ System</title>
     <link rel="icon" href="../../src/imagenes/favicon-16x16.png" type="image/x-icon">
     <link rel="stylesheet" href="../../src/css/DAQ.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -66,8 +66,6 @@
                 <h4>Fecha: <strong id="fecha"></strong></h4>
                 <h4>Hora: <strong id="hora"></strong></h4>
                 <h4>Tiempo: <strong id="tiempo"></strong></h4>
-
-                
             </div>
         </div>
 
@@ -102,6 +100,31 @@
 
         <div class="pie_pagina">
             <h4>Cristian Andres Cuchimba Quina</h4>
+        </div>
+
+
+        <div id="modal_captura" class="modal_oculto">
+
+            <div class="ventana_captura">
+
+                <h2>Nueva captura</h2>
+
+                <label>Nombre del operador</label>
+                <input type="text" id="nombre_operador">
+
+                <label>Nombre de la prueba</label>
+                <input type="text" id="nombre_prueba">
+
+                <label>Observaciones</label>
+                <textarea id="observaciones"></textarea>
+
+                <div class="botones_modal">
+                    <button id="btn_cancelar" class="btn">Cancelar</button>
+                    <button id="btn_confirmar" class="btn">Iniciar</button>
+                </div>
+
+            </div>
+
         </div>
 
 

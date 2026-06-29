@@ -119,3 +119,38 @@ const panelHistorial = document.getElementById("panel_historial");
 btnHistorial.addEventListener("click",()=>{
     panelHistorial.classList.toggle("oculto");
 });
+
+//Aparecer el formulario de prueba
+
+const btnIniciar = document.getElementById("btn_iniciar");
+const modal = document.getElementById("modal_captura");
+
+const btnCancelar = document.getElementById("btn_cancelar");
+const btnConfirmar = document.getElementById("btn_confirmar");
+
+btnIniciar.addEventListener("click",()=>{
+    modal.classList.remove("modal_oculto");
+    modal.classList.add("modal_visible");
+});
+
+btnCancelar.addEventListener("click",()=>{
+    modal.classList.remove("modal_visible");
+    modal.classList.add("modal_oculto");
+});
+
+btnConfirmar.addEventListener("click",()=>{
+
+    let operador = document.getElementById("nombre_operador").value;
+    let prueba = document.getElementById("nombre_prueba").value;
+    let observaciones = document.getElementById("observaciones").value;
+
+    console.log(operador);
+    console.log(prueba);
+    console.log(observaciones);
+
+    modal.classList.remove("modal_visible");
+    modal.classList.add("modal_oculto");
+
+    // aquí después iniciarías la captura
+
+});
