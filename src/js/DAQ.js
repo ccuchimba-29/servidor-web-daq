@@ -41,11 +41,11 @@ var interval_2_ID;
 
 
 graficaLimpia_1();
-
+/*
 BotonDB.addEventListener("click", (e)=>{
     window.location.href = "/../../src/javascrip-firebase/index.html"
 
-});
+}); */
 
 
 function iniciar(){
@@ -112,3 +112,10 @@ function confirmacionDeSalir(){
             //window.open("../../public/index.html", "Thanks for Visiting!");
         }
 }
+
+const btnHistorial = document.getElementById("btn_historial");
+const panelHistorial = document.getElementById("panel_historial");
+
+btnHistorial.addEventListener("click",()=>{
+    panelHistorial.classList.toggle("oculto");
+});

@@ -89,15 +89,15 @@ config = {
       }
     };
   
-    g_secundaria = document.getElementById('grafica_secundaria');
-    g_secundaria.style.width = "300px";
-    g_secundaria.style.height = "400px";
+    //g_secundaria = document.getElementById('grafica_secundaria');
+    //g_secundaria.style.width = "300px";
+    //g_secundaria.style.height = "400px";
     
-  
+  /*
     myChart_2 = new Chart(
       g_secundaria,
       config_2
-    );
+    );*/
 
 
 }
