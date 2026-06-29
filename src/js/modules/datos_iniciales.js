@@ -21,5 +21,13 @@ export function iniciarDatos(){
     document.getElementById("sensor_1").innerHTML = '0';
     document.getElementById("sensor_2").innerHTML = '0';
     document.getElementById("sensor_3").innerHTML = '0';
-
+    document.getElementById("sensor_4").innerHTML = '0';
+    document.getElementById("sensor_5").innerHTML = '0';
+    document.getElementById("sensor_6").innerHTML = '0';
+    document.getElementById("sensor_7").innerHTML = '0';
+    document.getElementById("sensor_8").innerHTML = '0';
+    document.getElementById("sensor_9").innerHTML = '0';
+    document.getElementById("sensor_10").innerHTML = '0';
+    document.getElementById("sensor_11").innerHTML = '0';
+    document.getElementById("sensor_12").innerHTML = '0';
 }

@@ -38,8 +38,6 @@ iniciarDatos();
 var interval_1_ID;
 var interval_2_ID;
 
-
-
 graficaLimpia_1();
 /*
 BotonDB.addEventListener("click", (e)=>{
@@ -152,5 +150,4 @@ btnConfirmar.addEventListener("click",()=>{
     modal.classList.add("modal_oculto");
 
     // aquí después iniciarías la captura
-
 });

@@ -112,10 +112,10 @@ export function iniciarGrafica_1(){
 
     myChart.update();
 
-    myChart_2.data.datasets[0].data.pop();
-    myChart_2.data.datasets[0].data = [value,value2,value3];
+    //myChart_2.data.datasets[0].data.pop();
+    //myChart_2.data.datasets[0].data = [value,value2,value3];
     
-    myChart_2.update('none');
+    //myChart_2.update('none');
     
     mostrarValores(value, value2, value3, contador);
     cargarArregloDeObjetosADescargar(value,value2,value3);
@@ -123,7 +123,7 @@ export function iniciarGrafica_1(){
 }
 export function detenerGrafica_1(){
     myChart.stop();
-    myChart_2.stop();
+    //myChart_2.stop();
     //detenerGrafica_2();
     document.getElementById("estado").innerHTML = 'Detenido';
     document.getElementById("estado").style.color = 'red';
@@ -132,7 +132,7 @@ export function detenerGrafica_1(){
 
 export function reiniciarGrafica_1(){
   myChart.destroy();
-  myChart_2.destroy();
+  //myChart_2.destroy();
   contador = 0;
   limpiarArregloDeObjetosADescargar();
 }
