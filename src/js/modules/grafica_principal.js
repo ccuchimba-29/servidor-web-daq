@@ -61,45 +61,8 @@ config = {
   );
 
     //***********************/
-    data_2 = {
-      labels: ["Sensor 1", "Sensor 2", "Sensor 3"],
-      datasets:[
-          {
-              label: 'Datos',
-              data: [0, 0, 0],
-              borderColor: 'blue',
-          }
-      ]
-    };
-    
-  config_2 = {
-      type: 'bar',
-      data: data_2,
-      options: {
-          scales: {
-              y: {
-                beginAtZero: true
-              }
-            },
-            elements:{
-              point:{
-                radius: 0
-              }
-            }
-      }
-    };
+
   
-    //g_secundaria = document.getElementById('grafica_secundaria');
-    //g_secundaria.style.width = "300px";
-    //g_secundaria.style.height = "400px";
-    
-  /*
-    myChart_2 = new Chart(
-      g_secundaria,
-      config_2
-    );*/
-
-
 }
 
 export function iniciarGrafica_1(){
@@ -112,11 +75,6 @@ export function iniciarGrafica_1(){
 
     myChart.update();
 
-    //myChart_2.data.datasets[0].data.pop();
-    //myChart_2.data.datasets[0].data = [value,value2,value3];
-    
-    //myChart_2.update('none');
-    
     mostrarValores(value, value2, value3, contador);
     cargarArregloDeObjetosADescargar(value,value2,value3);
     
