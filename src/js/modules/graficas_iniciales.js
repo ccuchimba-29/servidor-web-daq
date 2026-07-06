@@ -41,11 +41,9 @@ export function graficasIniciales(){
   };
 
   var g_principal3 = document.getElementById('myChart');
-  g_principal3.style.width = "900px";
-  g_principal3.style.height = "400px";
-  g_principal3.style.margin = "auto auto auto auto";
-
-
+  //g_principal3.style.width = "900px";
+  //g_principal3.style.height = "400px";
+  //g_principal3.style.margin = "auto auto auto auto";
 
     var myChart3 = new Chart(
     g_principal3,
