@@ -13,7 +13,10 @@ import { cambiarAInput } from "../modules/cambiarNombregrafica.js";
 import { nombreArchivoADescargar } from "../modules/cambiarNombregrafica.js";
 import { descargarArchivoComoCSV, descargarArchivoComoTXT, miArreglodeObjetos } from "../modules/archivoCSV.js";
 
+//importaciones nuevas de trabajo con objetos
+
 import historyPanel from "./historyPanel.js";
+import mainChart from "./chartManager.js"
 
 //Declaracion de variables
 //Estas variables contienen la información de los botones iniciar, detener y reiniciar
@@ -24,7 +27,7 @@ var banderaNombreGrafica = 0;
 
 let BotonDB = document.querySelector("#btn_db"); 
 
-document.getElementById("nombreGrafica").addEventListener("dblclick", cambiarAInput);
+//document.getElementById("nombreGrafica").addEventListener("dblclick", cambiarAInput);
 document.getElementById("btn_CSV").onclick =  descargarCSV;
 document.getElementById("btn_TXT").onclick =  descargarTXT;
 document.getElementById("btn_volver_pagina_web").onclick = confirmacionDeSalir;
@@ -72,6 +75,8 @@ confirmButton.addEventListener("click",()=>{
     modal.classList.remove("modal_visible");
     modal.classList.add("modal_oculto");
 
+    mainChart.setTitle(prueba);
+
     if(bandera_iniciar == 0){
         interval_1_ID = window.setInterval(iniciarGrafica_1,1000);
     }
@@ -92,7 +97,6 @@ stopButton.addEventListener("click", ()=>{
 
 /** boton reiniciar: Deja de recibir datos del esp, limpia la grafica.
 **/
-
 const restartButton = document.getElementById("btn_reiniciar");
 
 restartButton.addEventListener("click", ()=>{
@@ -112,7 +116,6 @@ restartButton.addEventListener("click", ()=>{
 //============Guardar=====================//
 /**Guardar */
 //**Guardar como  */
-
 
 function descargarCSV(){
     if(miArreglodeObjetos.length != 0){
@@ -137,31 +140,25 @@ function descargarTXT(){
             alert("¡Detenga la adquisición de datos!");
         }
     }else{
-        
         alert("¡No hay datos que descargar!"); 
     }
 }
 
 function confirmacionDeSalir(){
-   
         if(confirm("¿Seguro que desea salir?")){
             window.location.href = "../../public/index.html"
-            //window.open("../../public/index.html", "Thanks for Visiting!");
         }
 }
 
 
 //========Historial==========//
-/* Manejo de bloquer de historial 
+/* Manejo de bloque de historial 
  * */
 
 historyPanel.initialize();
-
 const btnHistorial = document.getElementById("btn_historial");
-//const panelHistorial = document.getElementById("panel_historial");
 
 btnHistorial.addEventListener("click",()=>{
-    //panelHistorial.classList.toggle("oculto");
     historyPanel.open();
 });
 
