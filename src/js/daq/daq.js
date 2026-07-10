@@ -23,8 +23,6 @@ var banderaNombreGrafica = 0;
 
 let BotonDB = document.querySelector("#btn_db"); 
 
-document.getElementById("btn_detener").onclick = detener;
-document.getElementById("btn_reiniciar").onclick = reiniciar;
 document.getElementById("nombreGrafica").addEventListener("dblclick", cambiarAInput);
 document.getElementById("btn_CSV").onclick =  descargarCSV;
 document.getElementById("btn_TXT").onclick =  descargarTXT;
@@ -39,7 +37,7 @@ var interval_2_ID;
 
 graficaLimpia_1();
 
-//------Dispositivo---------//
+/**Dispositivo */
 /** boton Iniciar: aparece el formulario de 
  * datos de la prueba.
  * Boton confirmar: inicia captura de datos desde el esp
@@ -82,9 +80,9 @@ confirmButton.addEventListener("click",()=>{
 
 /** boton detener: detiene momentaneamente la captura y grafica.
  **/
-const btnDetener = document.getElementById("btn_detener");
+const stopButton = document.getElementById("btn_detener");
 
-btnDetener.addEventListener("click", ()=>{
+stopButton.addEventListener("click", ()=>{
     detenerGrafica_1();
     clearInterval(interval_1_ID);
     bandera_iniciar = 0;
@@ -93,8 +91,10 @@ btnDetener.addEventListener("click", ()=>{
 
 /** boton reiniciar: Deja de recibir datos del esp, limpia la grafica.
 **/
-const btnReiniciar =
-function reiniciar(){
+
+const restartButton = document.getElementById("btn_reiniciar");
+
+restartButton.addEventListener("click", ()=>{
     if(bandera_detener == 1){
         clearInterval(interval_1_ID);
         reiniciarGrafica_1();
@@ -105,10 +105,12 @@ function reiniciar(){
     }else{
         alert("¡Detenga la adquisición de datos!")
     }
-}
+});
 
-//----------Guardar-----------//
 
+//============Guardar=====================//
+/**Guardar */
+//**Guardar como  */
 
 
 function descargarCSV(){
