@@ -123,20 +123,6 @@ let arraySensor=[12.4,8.9,67.8,87.5,10.7,19.6];
 export function iniciarGrafica_1(){
     contador = contador + 1;
     var randomValues = datosRandom();  
-
-
-    //var [value, value2, value3] = datosRandom();
-    //myChart.data.labels.push(contador);
-    //myChart.data.datasets[0].data.push(randomValues[0]);
-    //myChart.data.datasets[1].data.push(randomValues[1]);
-    //myChart.data.datasets[2].data.push(randomValues[2]);
-    
-    //myChart.update();
-
-    //mostrarValores(value, value2, value3, contador);
-    //cargarArregloDeObjetosADescargar(value,value2,value3);
-    
-
     plotData(randomValues,contador);
     showSensorValues(randomValues, contador);
     

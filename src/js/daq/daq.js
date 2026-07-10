@@ -13,6 +13,7 @@ import { cambiarAInput } from "../modules/cambiarNombregrafica.js";
 import { nombreArchivoADescargar } from "../modules/cambiarNombregrafica.js";
 import { descargarArchivoComoCSV, descargarArchivoComoTXT, miArreglodeObjetos } from "../modules/archivoCSV.js";
 
+import historyPanel from "./historyPanel.js";
 
 //Declaracion de variables
 //Estas variables contienen la información de los botones iniciar, detener y reiniciar
@@ -149,10 +150,18 @@ function confirmacionDeSalir(){
         }
 }
 
+
+//========Historial==========//
+/* Manejo de bloquer de historial 
+ * */
+
+historyPanel.initialize();
+
 const btnHistorial = document.getElementById("btn_historial");
-const panelHistorial = document.getElementById("panel_historial");
+//const panelHistorial = document.getElementById("panel_historial");
 
 btnHistorial.addEventListener("click",()=>{
-    panelHistorial.classList.toggle("oculto");
+    //panelHistorial.classList.toggle("oculto");
+    historyPanel.open();
 });
 
