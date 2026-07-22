@@ -1,4 +1,6 @@
 import { Reloj } from "./reloj.js";
+import datosRandom from "./datos_aleatorios.js";
+
 export var miArreglodeObjetos = [];
 
 
@@ -104,17 +106,31 @@ export function descargarArchivoComoTXT(nombreArchivo) {
 	}
 };
 
-export function cargarArregloDeObjetosADescargar(sensor1, sensor2, sensor3 ){
+/**
+ * MAnejo de datos a descargar
+ * 
+ */
 
-	var [anio, mes, dia, hora, minuto, segundo] = Reloj();
-	var fecha_rx = anio + "/"+ mes +"/"+ dia;
-	var hora_rx = hora +":"+ minuto + ":" + segundo;
-	var value_1 = sensor1;
-	var value_2 = sensor2;
-	var value_3 = sensor3;
-	miArreglodeObjetos.push({Fecha: fecha_rx, Hora: hora_rx, Sensor_1: value_1, Sensor_2: value_2, Sensor_3: value_3});
-	console.log(miArreglodeObjetos);
+
+export function cargarArregloDeObjetosADescargar(values) {
+
+    const [anio, mes, dia, hora, minuto, segundo] = Reloj();
+
+    const objeto = {
+        Fecha: `${anio}/${mes}/${dia}`,
+        Hora: `${hora}:${minuto}:${segundo}`
+    };
+
+    // Agregar las 12 temperaturas
+    values.forEach((valor, index) => {
+        objeto[`Sensor_${index + 1}`] = valor;
+    });
+
+    miArreglodeObjetos.push(objeto);
+
+    console.log(miArreglodeObjetos);
 }
+
 
 export function limpiarArregloDeObjetosADescargar(){
 	miArreglodeObjetos.splice(0, miArreglodeObjetos.length);

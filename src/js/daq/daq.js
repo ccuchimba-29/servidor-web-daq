@@ -17,6 +17,8 @@ import { descargarArchivoComoCSV, descargarArchivoComoTXT, miArreglodeObjetos } 
 
 import historyPanel from "./historyPanel.js";
 import mainChart from "./chartManager.js"
+import currentCapture from "./currentTest.js";
+import dbManager from "../firebase/dbManager.js";
 
 //Declaracion de variables
 //Estas variables contienen la información de los botones iniciar, detener y reiniciar
@@ -41,6 +43,8 @@ var interval_2_ID;
 
 graficaLimpia_1();
 
+//============Dispositivo=====================//
+
 /**Dispositivo */
 /** boton Iniciar: aparece el formulario de 
  * datos de la prueba.
@@ -64,21 +68,26 @@ cancelButton.addEventListener("click",()=>{
 });
 
 confirmButton.addEventListener("click",()=>{
-    let operador = document.getElementById("nombre_operador").value;
-    let prueba = document.getElementById("nombre_prueba").value;
-    let observaciones = document.getElementById("observaciones").value;
 
-    console.log(operador);
-    console.log(prueba);
-    console.log(observaciones);
+    let operatorName = document.getElementById("nombre_operador").value;
+    let testName = document.getElementById("nombre_prueba").value;
+    let testNotes = document.getElementById("observaciones").value;
+
+    currentCapture.operator = operatorName;
+    currentCapture.testName = testName;
+    currentCapture.testNotes = testNotes;
+
+    console.log(currentCapture.operator);
+    console.log(currentCapture.testName);
+    console.log(currentCapture.testNotes);
 
     modal.classList.remove("modal_visible");
     modal.classList.add("modal_oculto");
 
-    mainChart.setTitle(prueba);
+    mainChart.setTitle(currentCapture.testName);
 
     if(bandera_iniciar == 0){
-        interval_1_ID = window.setInterval(iniciarGrafica_1,1000);
+        interval_1_ID = window.setInterval(startDataCapture,1000);
     }
     bandera_iniciar = 1;
     bandera_detener = 0;
@@ -100,6 +109,7 @@ stopButton.addEventListener("click", ()=>{
 const restartButton = document.getElementById("btn_reiniciar");
 
 restartButton.addEventListener("click", ()=>{
+    /*
     if(bandera_detener == 1){
         clearInterval(interval_1_ID);
         reiniciarGrafica_1();
@@ -109,9 +119,18 @@ restartButton.addEventListener("click", ()=>{
         bandera_detener = 0;
     }else{
         alert("¡Detenga la adquisición de datos!")
-    }
+    }*/
+
+    dbManager.sendConfigData();
+
 });
 
+/**
+ * Funciones para manejo de "dispositivo"
+ */
+export function startDataCapture(){
+    iniciarGrafica_1();
+}
 
 //============Guardar=====================//
 /**Guardar */
@@ -121,7 +140,6 @@ function descargarCSV(){
     if(miArreglodeObjetos.length != 0){
         if(bandera_detener == 1 ){
             descargarArchivoComoCSV(nombreArchivoADescargar); 
-            
         }else{
             
             alert("¡Detenga la adquisición de datos!");
@@ -156,9 +174,57 @@ function confirmacionDeSalir(){
  * */
 
 historyPanel.initialize();
+
 const btnHistorial = document.getElementById("btn_historial");
 
 btnHistorial.addEventListener("click",()=>{
     historyPanel.open();
 });
 
+
+//========eventos==========//
+/* manejo de eventos relacionados a la pagina web 
+ * */
+
+
+document.addEventListener("keydown", (e) => {
+
+    if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "r") {
+
+        e.preventDefault();
+
+        document.getElementById("modal_password")
+            .classList.replace("modal_oculto", "modal_visible");
+
+        document.getElementById("txt_password").focus();
+    }
+
+});
+
+const PASSWORD = "reset";
+
+document.getElementById("btn_aceptar_password").addEventListener("click", () => {
+
+    const password = document.getElementById("txt_password").value;
+
+    if (password === PASSWORD) {
+
+        document.getElementById("modal_password")
+            .classList.replace("modal_visible", "modal_oculto");
+
+        reiniciarBaseDatos();
+
+    } else {
+
+        alert("Contraseña incorrecta");
+
+    }
+
+});
+
+document.getElementById("btn_cancelar_password").addEventListener("click", () => {
+
+    document.getElementById("modal_password")
+        .classList.replace("modal_visible", "modal_oculto");
+
+});
