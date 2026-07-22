@@ -125,6 +125,8 @@ restartButton.addEventListener("click", ()=>{
 
 });
 
+
+
 /**
  * Funciones para manejo de "dispositivo"
  */
@@ -226,4 +228,19 @@ document.getElementById("btn_cancelar_password").addEventListener("click", () =>
     document.getElementById("modal_password")
         .classList.replace("modal_visible", "modal_oculto");
 
+});
+
+const testButton = document.getElementById("btn_prueba");
+
+testButton.addEventListener("click", ()=>{
+
+    const dataInfo = {
+        device_code: "DD2",
+        operator_name: "ccuchimba",
+        start_date = Date.now(),
+        test_name = "Prueba 1",
+        test_notes = "observaciones de prueba"
+    }
+
+    //dbManager.configureNewRegister();
 });

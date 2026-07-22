@@ -3,16 +3,15 @@ import { sendConfigFbase,sendRecordFbase,sendDataFbase,readConfigFbase,
  } from "./firebase.js";
 
 const dbManager ={
-    
 
     defaultConfigDb: {
         config: {
-            record_code: "DR",
-            total_record: 1,
+            record_code: "DR1",
+            total_records: 1,
             current_record: 1,
             active_record: false 
         },
-        register: {
+        info: {
             device_code: "DD1",
             start_date: Date.now(),
             operator_name: "ccuchimba29",
@@ -22,6 +21,13 @@ const dbManager ={
         initialData : [22,22,22,22,22,22,22,22,22,22,22,22],
     },
 
+    dbConfig: {
+        active_record: true,
+        current_record: 0,
+        record_code: "",
+        total_records: 0,
+    } ,
+
     async initializeDatabase(){
         console.log("Config enviada");
         await sendConfigFbase(
@@ -30,9 +36,9 @@ const dbManager ={
         );
 
         await sendRecordFbase(
-            "registers",
+            "info",
             "DR1",
-            this.defaultConfigDb.register
+            this.defaultConfigDb.info
         );
 
         await sendDataFbase(
@@ -42,12 +48,38 @@ const dbManager ={
             this.defaultConfigDb.initialData
         ); 
     },
+    
+    async configureNewRegister(){
+        //let total_records = this.dbConfig.total_records;
+        let dataBaseConfig = await readConfigFbase();
+        let total_records =  dataBaseConfig.total_records;
+        console.log(total_records);
+        total_records++;
 
-    sendConfigData() {
-        console.log("Config enviada")
-        sendConfigFbase("configuracion",this.configData);
+        updateFbase(
+            "config", 
+            {
+                active_record: true,
+                current_record: total_records,
+                record_code: "DR" + String(total_records),
+                total_records: total_records
+            }
+        );
+
+        this.dbConfig.active_record = true;
+        this.dbConfig.current_record = total_records;
+        this.dbConfig.record_code = "DR" + String(total_records);
+        this.dbConfig.total_records = total_records;
+    
     },
 
+    async addRecord(data){
+        await sendRecordFbase(
+            "info",
+            this.dbConfig.record_code,
+            data
+        );
+    }
 };
 
 export default dbManager;

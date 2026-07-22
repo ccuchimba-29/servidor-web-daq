@@ -46,7 +46,7 @@ export async function sendDataFbase(
 
 export async function readConfigFbase() {
     const snapshot = await get(
-        ref(database,"configuracion")
+        ref(database,"config")
     );
 
     return snapshot.val();
