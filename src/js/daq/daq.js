@@ -109,7 +109,7 @@ stopButton.addEventListener("click", ()=>{
 const restartButton = document.getElementById("btn_reiniciar");
 
 restartButton.addEventListener("click", ()=>{
-    /*
+    
     if(bandera_detener == 1){
         clearInterval(interval_1_ID);
         reiniciarGrafica_1();
@@ -119,9 +119,9 @@ restartButton.addEventListener("click", ()=>{
         bandera_detener = 0;
     }else{
         alert("¡Detenga la adquisición de datos!")
-    }*/
+    }
 
-    dbManager.sendConfigData();
+    //dbManager.sendConfigData();
 
 });
 
@@ -211,8 +211,7 @@ document.getElementById("btn_aceptar_password").addEventListener("click", () => 
 
         document.getElementById("modal_password")
             .classList.replace("modal_visible", "modal_oculto");
-
-        reiniciarBaseDatos();
+        dbManager.initializeDatabase();
 
     } else {
 
